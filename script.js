@@ -163,6 +163,11 @@ function gameOver() {
     gameRunning = false;
     document.getElementById('gameOverScreen').style.display = 'block';
 
+    if (score > highScore) {
+        highScore = score;
+        localStorage.setItem('highScore', highScore);
+    }
+
     highScoreElement.textContent = 'High Score: ' + highScore;
 }
 
